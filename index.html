@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- MANDATORY: Declare support for both light and dark themes -->
+  <meta name="color-scheme" content="light dark">
+  <title>İnkılap Tarihi I — Çok Kolay &amp; Akılda Kalıcı Vize Rehberi</title>
+  <script>
+    {
+      const colorScheme = localStorage.getItem("color-scheme");
+      if (colorScheme) {
+        document.querySelector('meta[name="color-scheme"]').content = colorScheme;
+        document.documentElement.dataset.theme = colorScheme;
+      }
+    }
+  </script>
+  <style>
+    :root {
+      color-scheme: light dark;
+      interpolate-size: allow-keywords;
+
+      --bg-light: #f8fafc;
+      --bg-dark: #0f172a;
+      --surface-light: #ffffff;
+      --surface-dark: #1e293b;
+      --surface-alt-light: #f1f5f9;
+      --surface-alt-dark: #334155;
+      --text-light: #0f172a;
+      --text-dark: #f8fafc;
+      --muted-light: #475569;
+      --muted-dark: #94a3b8;
+      --border-light: #e2e8f0;
+      --border-dark: #334155;
+      
+      --brand-light: #b91c1c;
+      --brand-dark: #f87171;
+      --brand-bg-light: #fef2f2;
+      --brand-bg-dark: #450a0a;
+
+      --accent-gold-light: #b45309;
+      --accent-gold-dark: #fbbf24;
+      --accent-gold-bg-light: #fffbeb;
+      --accent-gold-bg-dark: #451a03;
+
+      --accent-blue-light: #1d4ed8;
+      --accent-blue-dark: #60a5fa;
+      --accent-blue-bg-light: #eff6ff;
+      --accent-blue-bg-dark: #172554;
+
+      --accent-green-light: #15803d;
+      --accent-green-dark: #4ade80;
+      --accent-green-bg-light: #f0fdf4;
+      --accent-green-bg-dark: #052e16;
+
+      --bg: var(--bg-light);
+      --surface: var(--surface-light);
+      --surface-alt: var(--surface-alt-light);
+      --text: var(--text-light);
+      --muted: var(--muted-light);
+      --border: var(--border-light);
+      --brand: var(--brand-light);
+      --brand-bg: var(--brand-bg-light);
+      --gold: var(--accent-gold-light);
+      --gold-bg: var(--accent-gold-bg-light);
+      --blue: var(--accent-blue-light);
+      --blue-bg: var(--accent-blue-bg-light);
+      --green: var(--accent-green-light);
+      --green-bg: var(--accent-green-bg-light);
+
+      @media (prefers-color-scheme: dark) {
+        --bg: var(--bg-dark);
+        --surface: var(--surface-dark);
+        --surface-alt: var(--surface-alt-dark);
+        --text: var(--text-dark);
+        --muted: var(--muted-dark);
+        --border: var(--border-dark);
+        --brand: var(--brand-dark);
+        --brand-bg: var(--brand-bg-dark);
+        --gold: var(--accent-gold-dark);
+        --gold-bg: var(--accent-gold-bg-dark);
+        --blue: var(--accent-blue-dark);
+        --blue-bg: var(--accent-blue-bg-dark);
+        --green: var(--accent-green-dark);
+        --green-bg: var(--accent-green-bg-dark);
+      }
+
+      @supports (color: light-dark(white, black)) {
+        --bg: light-dark(var(--bg-light), var(--bg-dark));
+        --surface: light-dark(var(--surface-light), var(--surface-dark));
+        --surface-alt: light-dark(var(--surface-alt-light), var(--surface-alt-dark));
+        --text: light-dark(var(--text-light), var(--text-dark));
+        --muted: light-dark(var(--muted-light), var(--muted-dark));
+        --border: light-dark(var(--border-light), var(--border-dark));
+        --brand: light-dark(var(--brand-light), var(--brand-dark));
+        --brand-bg: light-dark(var(--brand-bg-light), var(--brand-bg-dark));
+        --gold: light-dark(var(--accent-gold-light), var(--accent-gold-dark));
+        --gold-bg: light-dark(var(--accent-gold-bg-light), var(--accent-gold-bg-dark));
+        --blue: light-dark(var(--accent-blue-light), var(--accent-blue-dark));
+        --blue-bg: light-dark(var(--accent-blue-bg-light), var(--accent-blue-bg-dark));
+        --green: light-dark(var(--accent-green-light), var(--accent-green-dark));
+        --green-bg: light-dark(var(--accent-green-bg-light), var(--accent-green-bg-dark));
+      }
+
+      accent-color: var(--brand);
+    }
+
+    html[data-theme="light"] { color-scheme: light; }
+    html[data-theme="dark"] { color-scheme: dark; }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 16px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      text-wrap: balance;
+      line-height: 1.3;
+    }
+
+    p, li, blockquote {
+      text-wrap: pretty;
+    }
+
+    /* English Term Translation Pill */
+    .en-term {
+      display: inline-block;
+      font-size: 0.82em;
+      font-weight: 700;
+      color: var(--blue);
+      background: var(--blue-bg);
+      padding: 0.06rem 0.45rem;
+      border-radius: 5px;
+      border: 1px solid var(--border);
+      font-style: normal;
+      margin: 0 2px;
+    }
+
+    body.hide-en .en-term {
+      display: none !important;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--surface);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    }
+
+    .header-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-badge {
+      background: var(--brand);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 0.35rem 0.65rem;
+      border-radius: 6px;
+    }
+
+    .brand-title h1 {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+
+    .search-box input {
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface-alt);
+      color: var(--text);
+      font-size: 0.9rem;
+      width: 230px;
+    }
+
+    .btn {
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface-alt);
+      color: var(--text);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.15s ease;
+    }
+
+    .btn:hover {
+      border-color: var(--brand);
+    }
+
+    .btn.active {
+      background: var(--brand);
+      color: #ffffff;
+      border-color: var(--brand);
+    }
+
+    /* Layout */
+    .layout {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 1.75rem;
+      align-items: start;
+    }
+
+    @media (max-width: 920px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        position: static !important;
+      }
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: sticky;
+      top: 4.8rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.15rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .sidebar-section-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .nav-tabs {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .nav-tab {
+      text-align: left;
+      padding: 0.6rem 0.8rem;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.15s ease;
+    }
+
+    .nav-tab:hover {
+      background: var(--surface-alt);
+    }
+
+    .nav-tab.active {
+      background: var(--brand-bg);
+      color: var(--brand);
+      border-color: var(--brand);
+    }
+
+    .nav-badge {
+      font-size: 0.7rem;
+      padding: 0.1rem 0.45rem;
+      border-radius: 99px;
+      background: var(--surface-alt);
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .nav-tab.active .nav-badge {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .course-info-card {
+      background: var(--surface-alt);
+      border-radius: 8px;
+      padding: 0.8rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      border-left: 3px solid var(--brand);
+    }
+
+    .course-info-card strong {
+      color: var(--text);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    /* Content Panels */
+    .content-panel {
+      display: none;
+      flex-direction: column;
+      gap: 1.35rem;
+    }
+
+    .content-panel.active {
+      display: flex;
+    }
+
+    .hero-banner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--brand);
+      border-radius: 12px;
+      padding: 1.35rem 1.5rem;
+    }
+
+    .hero-banner .week-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--brand);
+      background: var(--brand-bg);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-banner h2 {
+      font-size: 1.45rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-banner p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* Super Summary Box ("10 Saniyede Anla") */
+    .tldr-box {
+      background: var(--green-bg);
+      border: 1px solid var(--green);
+      border-left: 5px solid var(--green);
+      border-radius: 10px;
+      padding: 0.95rem 1.15rem;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .tldr-box strong.tldr-title {
+      color: var(--green);
+      display: block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.2rem;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.4rem;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.65rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-header h3 {
+      font-size: 1.18rem;
+    }
+
+    .pill {
+      font-size: 0.73rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 99px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .pill-red { background: var(--brand-bg); color: var(--brand); }
+    .pill-gold { background: var(--gold-bg); color: var(--gold); }
+    .pill-blue { background: var(--blue-bg); color: var(--blue); }
+    .pill-green { background: var(--green-bg); color: var(--green); }
+
+    /* Grids & Mini Cards */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 0.9rem;
+    }
+
+    .sub-box {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+    }
+
+    .sub-box h4 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--brand);
+    }
+
+    ul.study-list {
+      padding-left: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    ul.study-list li::marker {
+      color: var(--brand);
+    }
+
+    /* Exam Tip Box ("Sınavda Nasıl Sorulur?") */
+    .exam-tip {
+      margin-top: 1rem;
+      padding: 0.85rem 1.1rem;
+      border-radius: 8px;
+      background: var(--gold-bg);
+      border-left: 4px solid var(--gold);
+      font-size: 0.92rem;
+    }
+
+    .exam-tip strong.tip-title {
+      color: var(--gold);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    /* Simple Timeline Table */
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 0.75rem 0.95rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--surface-alt);
+      font-weight: 700;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .year-cell {
+      font-weight: 800;
+      color: var(--brand);
+      white-space: nowrap;
+      width: 120px;
+    }
+
+    /* Cause -> Effect Arrow Flow */
+    .flow-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--surface-alt);
+      padding: 0.65rem 0.9rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      margin-bottom: 0.5rem;
+      font-size: 0.93rem;
+      flex-wrap: wrap;
+    }
+
+    .flow-arrow {
+      font-weight: 800;
+      color: var(--brand);
+    }
+
+    /* Flashcards */
+    .flashcard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .flashcard {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.15rem;
+      cursor: pointer;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 155px;
+    }
+
+    .flashcard:hover {
+      border-color: var(--brand);
+      transform: translateY(-2px);
+    }
+
+    .flashcard-term {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--brand);
+      margin-bottom: 0.25rem;
+    }
+
+    .flashcard-en {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--blue);
+      margin-bottom: 0.35rem;
+    }
+
+    .flashcard-def {
+      font-size: 0.9rem;
+      display: none;
+      margin-top: 0.45rem;
+      padding-top: 0.45rem;
+      border-top: 1px dashed var(--border);
+    }
+
+    .flashcard.flipped .flashcard-def {
+      display: block;
+    }
+
+    .flashcard-hint {
+      font-size: 0.73rem;
+      color: var(--muted);
+      margin-top: auto;
+      padding-top: 0.6rem;
+    }
+
+    /* Quiz */
+    .quiz-item {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.15rem;
+      margin-bottom: 1rem;
+    }
+
+    .quiz-q {
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      font-size: 0.98rem;
+    }
+
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .quiz-opt {
+      text-align: left;
+      padding: 0.6rem 0.85rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.15s ease;
+    }
+
+    .quiz-opt:hover { border-color: var(--blue); }
+    .quiz-opt.correct { background: var(--green-bg); border-color: var(--green); color: var(--green); font-weight: 700; }
+    .quiz-opt.wrong { background: var(--brand-bg); border-color: var(--brand); color: var(--brand); }
+
+    .quiz-feedback {
+      margin-top: 0.7rem;
+      font-size: 0.88rem;
+      display: none;
+      padding: 0.6rem 0.85rem;
+      border-radius: 6px;
+      background: var(--surface);
+    }
+
+    /* Syllabus */
+    .syllabus-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .syllabus-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 0.95rem;
+      border-radius: 8px;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+      gap: 1rem;
+    }
+
+    .syllabus-row.loaded { border-left: 4px solid var(--green); }
+    .syllabus-row.pending { opacity: 0.75; border-left: 4px solid var(--muted); }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="brand-title">
+        <span class="brand-badge">KOLAY VİZE</span>
+        <h1>İnkılap Tarihi I — Sıfırdan Çok Basit &amp; Net Özet</h1>
+      </div>
+      <div class="header-controls">
+        <div class="search-box">
+          <input type="search" id="searchInput" placeholder="Kelime veya tarih ara..." aria-label="Notlarda ara">
+        </div>
+        <button class="btn active" id="toggleEnBtn" type="button">
+          🇬🇧 İngilizce Terimler: Açık
+        </button>
+        <button class="btn" id="themeToggleBtn" type="button">
+          🌗 Tema
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <!-- Sol Menü -->
+    <aside class="sidebar">
+      <div>
+        <div class="sidebar-section-title">Haftalar &amp; Çalışma</div>
+        <div class="nav-tabs" role="tablist">
+          <button class="nav-tab active" data-target="panel-week1" role="tab" aria-selected="true">
+            <span>1. Hafta: Giriş &amp; Çöküş</span>
+            <span class="nav-badge">Basit Özet</span>
+          </button>
+          <button class="nav-tab" data-target="panel-week2" role="tab" aria-selected="false">
+            <span>2. Hafta: Islahatlar</span>
+            <span class="nav-badge">Basit Özet</span>
+          </button>
+          <button class="nav-tab" data-target="panel-flashcards" role="tab" aria-selected="false">
+            <span>Ezber Kartları (TR ⇄ EN)</span>
+            <span class="nav-badge">26 Terim</span>
+          </button>
+          <button class="nav-tab" data-target="panel-quiz" role="tab" aria-selected="false">
+            <span>Deneme Testi (Quiz)</span>
+            <span class="nav-badge">15 Soru</span>
+          </button>
+          <button class="nav-tab" data-target="panel-syllabus" role="tab" aria-selected="false">
+            <span>13 Haftalık Konular</span>
+            <span class="nav-badge">2/13</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="course-info-card">
+        <strong>Ders Bilgileri</strong>
+        Hoca: Ayşegül Çakar<br>
+        Mail: aysegulcakar@halic.edu.tr<br>
+        Ofis: 12228 | Destek: huzem@halic.edu.tr
+      </div>
+
+      <div class="course-info-card" style="border-left-color: var(--green);">
+        <strong>Nasıl Okumalısın?</strong>
+        Uzun cümleleri tamamen attık! Her konunun başında yeşil kutuda <strong>"⚡ 10 Saniyede Anla"</strong> özeti, altında ise <strong>kısa maddeler</strong> ve mavi kutuda <span class="en-term">İngilizce Karşılığı</span> var.
+      </div>
+    </aside>
+
+    <!-- Ana İçerik -->
+    <main id="mainContent">
+
+      <!-- ==================== 1. HAFTA ==================== -->
+      <section class="content-panel active" id="panel-week1" role="tabpanel">
+        <div class="hero-banner">
+          <span class="week-tag">1. Hafta Özeti</span>
+          <h2>Türk İnkılabı Nedir? Atatürk Kimdir? Osmanlı Neden Çöktü?</h2>
+          <p>1. Haftanın tüm PDF ve slaytlarında bilmen gereken sadece <strong>5 ana başlık</strong> var. Hepsi aşağıda en sade haliyle listelendi.</p>
+        </div>
+
+        <!-- BÖLÜM 1 -->
+        <article class="card">
+          <div class="card-header">
+            <h3>1. Türk İnkılabı Nedir ve Kaynakları Nelerdir?</h3>
+            <span class="pill pill-red">Temel Tanım</span>
+          </div>
+
+          <div class="tldr-box">
+            <strong class="tldr-title">⚡ 10 Saniyede Anla</strong>
+            Türk İnkılabı iki şey demektir: <strong>1) Düşman işgalinden kurtulmak (Bağımsızlık)</strong> + <strong>2) Eskimiş kurumları yıkıp modern bir devlet kurmak (Çağdaşlaşma)</strong>. Bu dönemin en önemli kitabı ise Atatürk'ün yazdığı <strong>Nutuk</strong>'tur.
+          </div>
+
+          <ul class="study-list">
+            <li><strong>Zorunlu Ders:</strong> YÖK <span class="en-term">Council of Higher Education (YÖK)</span> kuralı gereği Türkiye'deki tüm öğrencilere (yabancılar dahil) zorunludur <span class="en-term">must course</span>.</li>
+            <li><strong>Türk İnkılabı Tanımı:</strong> Atatürk liderliğinde yapılan <strong>milli bağımsızlık ve modernleşme</strong> hareketidir <span class="en-term">movement of Turkish national independence and modernization</span>.</li>
+            <li><strong>Amacı:</strong> Devletin eskimiş/bozulmuş kurumlarını <span class="en-term">old and corrupted structures</span> en modern olanlarla değiştirmek ve milleti <strong>milliyetçilik bilinciyle</strong> <span class="en-term">consciousness of nationalism</span> ilerletmektir.</li>
+            <li><strong>Nasıl Başladı?</strong> 1. Dünya Savaşı sonunda Osmanlı'yı işgal eden <strong>İtilaf Devletleri'ne</strong> <span class="en-term">Entente Powers</span> karşı direniş olarak başladı, <strong>1923'te</strong> Cumhuriyet kurulduktan sonra da reformlarla devam etti.</li>
+            <li><strong>Ne Zaman Başladı?</strong> Tarihçiler arasında <strong>1919, 1920 veya 1921</strong> olduğuna dair farklı görüşler vardır.</li>
+            <li><strong>Adı Ne Olmalı? (Sınav Sorusu!):</strong> Bazıları <em>"Atatürk Revolution"</em> veya <em>"Kemalist Revolution"</em> demiştir ama <strong>Atatürk'ün kendisi "Türk Genel İnkılabı" <span class="en-term">Turkish General Revolution</span> veya "Türk İnkılabı" <span class="en-term">Turkish Revolution</span> adını tercih etmiştir.</strong> (Çünkü halk için ve halka dayanarak yapılmıştır).</li>
+            <li><strong>En Önemli Tarihi Kaynak:</strong> Atatürk'ün <strong>Nutuk (Söylev)</strong> <span class="en-term">Speech (Nutuk)</span> adlı eseri bu dönemin <u>bir numaralı kaynağıdır</u> <span class="en-term">the most important source</span>. Diğer kaynaklar: Devlet/askeri arşivler, Meclis tutanakları <span class="en-term">Record of Turkish parliament</span>, Kurtuluş Savaşı gazeteleri ve Atatürk'ün arkadaşlarının anıları <span class="en-term">memoirs</span>.</li>
+          </ul>
+        </article>
+
+        <!-- BÖLÜM 2 -->
+        <article class="card">
+          <div class="card-header">
+            <h3>2. Atatürk'ün Hayatı — Sadece Bilmen Gereken Tarihler</h3>
+            <span class="pill pill-gold">Kronoloji</span>
+          </div>
+
+          <div class="tldr-box">
+            <strong class="tldr-title">⚡ 10 Saniyede Anla</strong>
+            1881'de Selanik'te doğdu, 1905'te Şam'da ilk gizli cemiyetini kurdu, 1915'te Çanakkale Kahramanı oldu, 1919'da Samsun'a çıkıp Kurtuluş Savaşı'nı başlattı, 1923'te Cumhuriyeti kurup 15 yıl (1938'e kadar) Cumhurbaşkanlığı yaptı.
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Tarih</th>
+                  <th>Ne Oldu? (Kısa &amp; Net)</th>
+                  <th>Sınavdaki İngilizce Anahtar Kelimesi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="year-cell">1881</td>
+                  <td><strong>Selanik'te</strong> doğdu. Babası <strong>Ali Rıza Efendi</strong> (gümrük memuru/kereste tüccarı), annesi <strong>Zübeyde Hanım</strong>. Önce dini okula, sonra modern okula gitti.</td>
+                  <td><span class="en-term">Born in Salonica</span> <span class="en-term">lumber merchant</span></td>
+                </tr>
+                <tr>
+                  <td class="year-cell">1893</td>
+                  <td>Askeri Rüştiye'ye (Askeri Lise) girdi. Matematik öğretmeni ona <em>"mükemmellik"</em> demek olan <strong>"Kemal"</strong> adını verdi.</td>
+                  <td><span class="en-term">Military high school</span> <span class="en-term">Kemal (meaning perfection)</span></td>
+                </tr>
+                <tr>
+                  <td class="year-cell">1905</td>
+                  <td>İstanbul <strong>Harp Akademisi'nden</strong> <strong>Kurmay Yüzbaşı</strong> olarak mezun oldu. İlk görev yeri olan <strong>Şam'da</strong> padişahın baskısına karşı <strong>"Vatan ve Hürriyet"</strong> gizli cemiyetini kurdu.</td>
+                  <td><span class="en-term">War Academy in Istanbul</span> <span class="en-term">Staff Captain</span> <span class="en-term">Damascus</span> <span class="en-term">Homeland and Freedom</span></td>
+                </tr>
+                <tr>
+                  <td class="year-cell">1908–1914</td>
+                  <td><strong>Arnavutluk</strong> ve <strong>Trablusgarp'ta</strong> savaştı; <strong>Sofya'da Askeri Ataşe</strong> olarak görev yaptı.</td>
+                  <td><span class="en-term">Albania and Tripoli</span> <span class="en-term">Military attache in Sofia</span></td>
+                </tr>
+                <tr>
+                  <td class="year-cell">1915</td>
+                  <td><strong>Çanakkale Savaşı'nda</strong> (Albay rütbesiyle) düşmanı durdurup <strong>Ulusal Kahraman</strong> oldu.</td>
+                  <td><span class="en-term">Dardanelles campaign</span> <span class="en-term">National hero</span></td>
+                </tr>
+                <tr>
+                  <td class="year-cell">1916–1918</td>
+                  <td><strong>1916'da</strong> (35 yaşında) <strong>General</strong> oldu, Doğu'da iki ili (Muş ve Bitlis) kurtardı. Sonra <strong>Filistin ve Halep'te</strong> ordulara komuta edip Halep'te düşmanı durdurdu.</td>
+                  <td><span class="en-term">Promoted to general in 1916</span> <span class="en-term">Palestine and Aleppo</span></td>
+                </tr>
+                <tr>
+                  <td class="year-cell">19 Mayıs 1919</td>
+                  <td><strong>Samsun'a</strong> çıkarak Kurtuluş Savaşı'nı başlattı. Ardından <strong>Erzurum ve Sivas Kongrelerini</strong> topladı.</td>
+                  <td><span class="en-term">Landed in Samsun</span> <span class="en-term">Congress of Erzurum and Sivas</span></td>
+                </tr>
+                <tr>
+                  <td class="year-cell">23 Nisan 1920</td>
+                  <td>Ankara'da <strong>TBMM açıldı</strong> ve Meclis Başkanı seçildi. İnönü zaferleri sonrası Meclis ona <strong>Mareşal</strong> rütbesi ve <strong>Başkomutan</strong> unvanı verdi.</td>
+                  <td><span class="en-term">Grand National Assembly</span> <span class="en-term">Commander-in-Chief</span> <span class="en-term">Marshal</span></td>
+                </tr>
+                <tr>
+                  <td class="year-cell">Ağustos 1922</td>
+                  <td>Büyük Taarruz ile nihai zafer kazanıldı, Anadolu kurtarıldı ve <strong>Osmanlı Saltanatı kaldırıldı</strong>.</td>
+                  <td><span class="en-term">Ultimate victory</span> <span class="en-term">Ottoman dynasty abolished</span></td>
+                </tr>
+                <tr>
+                  <td class="year-cell">1923</td>
+                  <td>• <strong>Temmuz 1923:</strong> <strong>Lozan Antlaşması</strong> imzalandı.<br>• <strong>Ekim ortası:</strong> <strong>Ankara</strong> başkent oldu.<br>• <strong>29 Ekim 1923:</strong> <strong>Cumhuriyet ilan edildi</strong>, ilk Cumhurbaşkanı seçildi.</td>
+                  <td><span class="en-term">Lausanne Treaty</span> <span class="en-term">Ankara became capital</span> <span class="en-term">Republic proclaimed</span></td>
+                </tr>
+                <tr>
+                  <td class="year-cell">1923–1938</td>
+                  <td><strong>15 yıl Cumhurbaşkanlığı yaptı:</strong> Halifeliği kaldırdı, devleti ve eğitimi laikleştirdi, kadınlara eşit haklar verdi, harf ve şapka/kıyafet devrimi yaptı.<br>• <strong>1934:</strong> Soyadı Kanunu ile <strong>"Atatürk"</strong> (Türklerin Babası) soyadını aldı.<br>• <strong>10 Kasım 1938:</strong> Vefat etti.</td>
+                  <td><span class="en-term">Abolished the Caliphate</span> <span class="en-term">Surname law (1934)</span> <span class="en-term">Father of the Turks</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="exam-tip">
+            <strong class="tip-title">💬 Atatürk'ün Slayttaki Ünlü Sözü ("İki Mustafa Kemal Vardır")</strong>
+            <em>"There are two Mustafa Kemals. One is the flesh-and-blood Mustafa Kemal who will pass away. The other is you..."</em> (İki Mustafa Kemal vardır: Biri et ve kemikten olan geçici ben; diğeri ise ideallerimizi yaşatacak olan sizlersiniz). Ayrıca 1981'de doğumunun 100. yılında (<span class="en-term">Atatürk Centennial in 1981</span>) Beyaz Saray onu <em>"savaşta ve barışta büyük bir lider"</em> olarak anmıştır.
+          </div>
+        </article>
+
+        <!-- BÖLÜM 3 -->
+        <article class="card">
+          <div class="card-header">
+            <h3>3. Klasik Dönem Osmanlı Yapısı (Devlet, Hukuk, Toprak, Toplum)</h3>
+            <span class="pill pill-blue">Klasik Düzen</span>
+          </div>
+
+          <div class="tldr-box">
+            <strong class="tldr-title">⚡ 10 Saniyede Anla</strong>
+            Türkiye Cumhuriyeti, Osmanlı'nın miras bıraktığı topraklar (Anadolu ve Trakya) üzerinde kuruldu. Atatürk'ün neden devrim yaptığını anlamak için önce Osmanlı'nın nasıl yönetildiğini ve neden bozulduğunu bilmeliyiz.
+          </div>
+
+          <div class="grid-2">
+            <div class="sub-box">
+              <h4>👑 Taht ve Hukuk Sistemi</h4>
+              <ul class="study-list">
+                <li><strong>Kuruluş ve Zirve:</strong> Anadolu Selçuklu yıkılınca Beylikler arasından <strong>1299'da</strong> doğdu, 600 yıl yaşadı. Fatih'in İstanbul'u fethiyle dünya gücü oldu, 16. yüzyılda 3 kıtaya hükmetti.</li>
+                <li><strong>Tahta Geçiş (Veraset):</strong> Önceden tüm erkek hanedan üyelerinin tahta geçme hakkı vardı, bu da taht kavgalarına yol açıyordu.
+                  <ul>
+                    <li><strong>Fatih Sultan Mehmed:</strong> Devlet bölünmesin diye <strong>Kardeş Katlini yasallaştırdı</strong> <span class="en-term">legalized fratricide</span> (boğdurarak idam).</li>
+                    <li><strong>I. Ahmed:</strong> Kardeş katlini kaldırıp <strong>"en yaşlı erkek üyenin tahta geçmesi"</strong> (Ekber ve Erşed) sistemini getirdi <span class="en-term">eldest male member inherited the throne</span>.</li>
+                  </ul>
+                </li>
+                <li><strong>İkili Hukuk:</strong> Hem İslam hukuku olan <strong>Şeriat</strong> <span class="en-term">Sharia</span> hem de padişahın çıkardığı Türk geleneklerine dayalı <strong>Örfi Hukuk (Kanun)</strong> <span class="en-term">Customary law / Örfi (kanun)</span> birlikte uygulandı.</li>
+              </ul>
+            </div>
+
+            <div class="sub-box">
+              <h4>🌾 Tımar Sistemi ve 2 Sosyal Sınıf</h4>
+              <ul class="study-list">
+                <li><strong>Tımar Sistemi <span class="en-term">Timar (Land) System</span>:</strong> Osmanlı ekonomisinin ve ordusunun belkemiğidir.
+                  <ul>
+                    <li>Devlet, toprağı savaşta başarı gösteren askere (<strong>Tımarlı Sipahi</strong>) verir.</li>
+                    <li>Sipahi toprağı köylüye işletir ve vergiyi toplar.</li>
+                    <li>Karşılığında o parayla devlete <strong>atlı asker yetiştirir</strong> (Hazine para harcamadan bedava ordu sahibi olur!).</li>
+                  </ul>
+                </li>
+                <li><strong>Toplum 2 Sınıfa Ayrılır:</strong>
+                  <ul>
+                    <li><strong>1. Beraya (Yönetenler / Askeri Sınıf) <span class="en-term">Rulers / Beraya</span>:</strong> Yönetim, ordu, eğitim ve hukuk işlerine bakarlar. <strong>Vergi vermezler.</strong></li>
+                    <li><strong>2. Reaya (Yönetilen Halk) <span class="en-term">The Ruled / Reaya</span>:</strong> Tarım ve ticaret yapan üretici halktır. <strong>Vergi ödeyerek</strong> devleti ve savaşları finanse ederler.</li>
+                  </ul>
+                </li>
+                <li><strong>Çöküşün Başlangıcı:</strong> <strong>1683 Viyana Bozgunu</strong> <span class="en-term">Defeat at Vienna in 1683</span> ile Avrupa'daki üstünlük bitti. 19. yüzyılda Osmanlı'ya <strong>"Avrupa'nın Hasta Adamı"</strong> <span class="en-term">Sick man of Europe</span> dendi.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- BÖLÜM 4 -->
+        <article class="card">
+          <div class="card-header">
+            <h3>4. Osmanlı Neden Çöktü? (Dış ve İç Nedenler)</h3>
+            <span class="pill pill-red">Sınavda %100 Çıkar</span>
+          </div>
+
+          <div class="tldr-box">
+            <strong class="tldr-title">⚡ 10 Saniyede Anla</strong>
+            <strong>Dışarıda:</strong> Avrupa bilim, ticaret yolları ve sanayide uçarken Osmanlı yerinde saydı; Rusya ve Avrupa devletleri Osmanlı'yı parçaladı.<br>
+            <strong>İçeride:</strong> Padişahlar zayıfladı, Tımar bozuldu, Yeniçeriler zorbalığa başladı, ekonomi iflas etti (Düyûn-ı Umûmiye kuruldu) ve medreselerden bilim çıkarıldı.
+          </div>
+
+          <div class="grid-2">
+            <div class="sub-box">
+              <h4>🌍 A. Dış Nedenler <span class="en-term">External Reasons</span></h4>
+              <ul class="study-list">
+                <li><strong>1. Rönesans, Reform ve Aydınlanma:</strong> Avrupa kilise baskısını (skolastik düşünceyi) kırıp <strong>aklı ve bilimi</strong> <span class="en-term">reason and science</span> öne çıkardı, üniversiteler kurdu ve askeri/teknik olarak Osmanlı'yı geçti.</li>
+                <li><strong>2. Coğrafi Keşifler (1498):</strong> Portekizli <strong>Vasco da Gama</strong> Afrika'nın güneyinden dolaşıp <strong>Hindistan Deniz Yolu'nu</strong> <span class="en-term">sea route to India</span> buldu. Akdeniz ticareti öldü, Osmanlı gümrük gelirlerini kaybetti.</li>
+                <li><strong>3. Sanayi İnkılabı <span class="en-term">Industrial Revolution</span>:</strong> <strong>İngiltere'de buhar makinesiyle</strong> <span class="en-term">steam engine</span> başladı. Avrupa ucuz seri üretime geçti ve sömürgeciliğe hız verdi.</li>
+                <li><strong>4. Kapitülasyonlar (1740) <span class="en-term">Commercial Capitulations</span>:</strong> Kanuni döneminde ticaret canlansın diye verilen ayrıcalıklar, <strong>1740'ta I. Mahmud</strong> zamanında <strong>kalıcı (sürekli)</strong> hale geldi. Ucuz Avrupa malları Osmanlı esnafını batırdı, yabancı devletler iç işlerimize karıştı.</li>
+                <li><strong>5. Rusya'nın Büyümesi (1502):</strong> Kuzeydeki Türk devleti <strong>Altın Orda 1502'de yıkılınca</strong> <span class="en-term">fall of the Golden Horde in 1502</span> <strong>Rus Çarlığı</strong> güçlendi. Rusya <strong>sıcak denizlere ve Boğazlara inmek</strong> <span class="en-term">warm seas and straits</span> için her 10 yılda bir Osmanlı'yla savaştı.</li>
+                <li><strong>6. Fransız İhtilali (1789) ve Azınlık İsyanları:</strong> Avrupa devletleri Hristiyan azınlıkları kışkırtıp ayaklandırdı.</li>
+                <li><strong>7. Şark Meselesi (Doğu Sorunu) <span class="en-term">The Eastern Question</span>:</strong> Avrupalı Hristiyan devletlerin Osmanlı topraklarını paylaşma ve içindeki milletleri bağımsız yapma planıdır.</li>
+              </ul>
+            </div>
+
+            <div class="sub-box">
+              <h4>🏛️ B. İç Nedenler <span class="en-term">Internal Reasons</span></h4>
+              <ul class="study-list">
+                <li><strong>1. Yönetimin Bozulması:</strong> Zayıf ve tecrübesiz padişahlar tahta çıkınca <strong>ulema, saray kadınları (Harem)</strong> yönetime karıştı; memurluklar <strong>rüşvet ve torpille</strong> <span class="en-term">bribery and favoritism</span> satıldı.</li>
+                <li><strong>2. Ordunun Bozulması:</strong> Tımar sistemi çökünce Tımarlı Sipahi azaldı. Devlet maaşlı <strong>Yeniçeri (Kapıkulu)</strong> sayısını artırdı. Yeniçeriler yozlaştı, padişah indirip çıkaran bir çeteye dönüştü.</li>
+                <li><strong>3. Ekonomik İflas:</strong>
+                  <ul>
+                    <li>Toprak gelirlerini peşin satma sistemi olan <strong>İltizam sistemi</strong> <span class="en-term">iltizam (tax farming)</span> çıktı.</li>
+                    <li>Ülke içindeki şehirler arasında bile <strong>1873 yılına kadar iç gümrük vergisi</strong> <span class="en-term">internal customs barriers until 1873</span> vardı, bu yüzden sanayi kurulamadı.</li>
+                    <li><strong>1854'te</strong> ilk dış borç alındı. Faizler bile ödenemeyince Avrupa devletleri <strong>1881'de Düyûn-ı Umûmiye'yi (Genel Borçlar İdaresi)</strong> <span class="en-term">Public Debt Administration (1881)</span> kurup Osmanlı'nın gelirlerine el koydu!</li>
+                  </ul>
+                </li>
+                <li><strong>4. Sosyal Çöküş ve Göç:</strong> Ağır vergiler ve 17. yüzyıldaki <strong>Celali İsyanları</strong> <span class="en-term">Celali uprisings</span> yüzünden köylü toprağını bırakıp şehirlere göç etti; şehirde işsizlik arttı, tarım bitti.</li>
+                <li><strong>5. Eğitimin Çökmesi:</strong> <strong>Medreselerden</strong> <span class="en-term">madrasahs</span> pozitif bilimler (matematik, fen, felsefe) çıkarıldı, sadece dini dersler kaldı. Saray okulu <strong>Enderun</strong> önemini yitirdi. Din adamları <span class="en-term">clergy</span> her yeniliğe karşı çıktı.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ==================== 2. HAFTA ==================== -->
+      <section class="content-panel" id="panel-week2" role="tabpanel">
+        <div class="hero-banner">
+          <span class="week-tag">2. Hafta Özeti</span>
+          <h2>Osmanlı Çöküşü Durdurmak İçin Ne Yaptı? (18. ve 19. Yüzyıl Islahatları)</h2>
+          <p>Osmanlı'nın yıkılmamak için sırasıyla yaptığı <strong>5 büyük hamle</strong>: <strong>1) Lale Devri → 2) III. Selim (Nizam-ı Cedid) → 3) II. Mahmud → 4) Tanzimat Fermanı → 5) Islahat Fermanı.</strong></p>
+        </div>
+
+        <!-- BÖLÜM 1: 18. YY VE LALE DEVRİ -->
+        <article class="card">
+          <div class="card-header">
+            <h3>1. 18. Yüzyıl: Batı'nın Üstünlüğünü Kabul Etme ve Lale Devri (1718–1730)</h3>
+            <span class="pill pill-gold">18. Yüzyıl</span>
+          </div>
+
+          <div class="tldr-box">
+            <strong class="tldr-title">⚡ 10 Saniyede Anla</strong>
+            Osmanlı, <strong>1683 Viyana Bozgunu</strong> ve <strong>1699 Karlofça Antlaşması</strong> ile ağır yenilince <strong>ilk kez "Avrupa bizden daha üstün" dedi</strong>. 18. yüzyılda Lale Devri hariç yapılan tüm yenilikler <strong>sadece askeri</strong> alandadır.
+          </div>
+
+          <div class="grid-2">
+            <div class="sub-box">
+              <h4>🌷 Lale Devri (1718–1730) <span class="en-term">The Tulip Era</span></h4>
+              <ul class="study-list">
+                <li><strong>Kim Yönetti?</strong> Padişah <strong>III. Ahmed</strong> ve damadı Sadrazam <strong>Nevşehirli Damat İbrahim Paşa</strong>.</li>
+                <li><strong>Ne Yapıldı? (Kültür ve Mimari Odaklı):</strong>
+                  <ul>
+                    <li>Avrupa'yı tanımak için <strong>Viyana, Paris ve Moskova'ya geçici elçiler</strong> <span class="en-term">embassy delegations</span> gönderildi.</li>
+                    <li>En ünlü elçi Fransa'ya (Paris'e) giden <strong>Yirmisekiz Mehmed Çelebi</strong>'dir (Fransız saraylarını, okullarını, fabrikalarını inceledi).</li>
+                    <li>Yirmisekiz Mehmed Çelebi'nin oğlu <strong>Mehmed Said Efendi</strong>'nin girişimiyle <strong>1727'de ilk Türk Matbaası</strong> <span class="en-term">first printing house in 1727</span> kuruldu!</li>
+                    <li>Doğu ve Batı dillerinden tarih, felsefe, astronomi kitapları Türkçeye çevrildi.</li>
+                    <li>Fransız sarayları örnek alınarak İstanbul'da köşkler, bahçeler, çeşmeler yapıldı.</li>
+                  </ul>
+                </li>
+                <li><strong>Nasıl Bitti? (1730):</strong> Eğlencelere ve bu yeni kültüre karşı çıkan <strong>Yeniçeriler kanlı bir isyan çıkardı</strong>: III. Ahmed tahttan indirildi, Damat İbrahim Paşa öldürüldü.</li>
+              </ul>
+            </div>
+
+            <div class="sub-box">
+              <h4>⚔️ Lale Devri Sonrası 18. Yy. Askeri Islahatları</h4>
+              <p style="font-size:0.88rem; color:var(--muted); margin-bottom:0.5rem;">Padişahlar: I. Mahmud, III. Mustafa ve I. Abdülhamid</p>
+              <ul class="study-list">
+                <li><strong>Yabancı Uzmanlar:</strong> Avrupa'nın askeri üstünlüğü kabul edildiği için ülkelerinden kaçan <strong>Avrupalı yabancı askeri uzmanlar</strong> <span class="en-term">foreign military experts</span> getirilip ordu eğitilmeye çalışıldı.</li>
+                <li><strong>Neden Kalıcı Olmadı?</strong> Çünkü bu ıslahatlar <strong>plansız, sistemsiz ve kesintiliydi</strong> <span class="en-term">not well-planned, systematic, and permanent</span>.</li>
+                <li><strong>Kim Engel Oldu?</strong> <strong>Yeniçeriler, ulema (din adamları) ve bürokratlar</strong> tepki gösterdi. Islahat yapanlar onlardan korkup çekingen davrandı <span class="en-term">acting timidly</span>.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- BÖLÜM 2: III. SELİM VE II. MAHMUD -->
+        <article class="card">
+          <div class="card-header">
+            <h3>2. 19. Yüzyıl: III. Selim (Nizam-ı Cedid) ve II. Mahmud Dönemi</h3>
+            <span class="pill pill-red">Çok Sorulur</span>
+          </div>
+
+          <div class="tldr-box">
+            <strong class="tldr-title">⚡ 10 Saniyede Anla (İkisinin Farkı!)</strong>
+            <strong>III. Selim:</strong> Planlı ilk reformu (<strong>Nizam-ı Cedid</strong>) yaptı ama Yeniçeri Ocağı'nı kaldırmaya gücü yetmediği için orduda ikilik çıktı ve isyanla devrildi.<br>
+            <strong>II. Mahmud:</strong> Ders aldı! <strong>1826'da Yeniçeri Ocağı'nı tamamen yıktı</strong>, yerine modern ordu kurdu ve devletin tüm kurumlarını baştan aşağı yeniledi.
+          </div>
+
+          <div class="grid-2">
+            <div class="sub-box">
+              <h4>🛡️ III. Selim (1789–1807) &amp; Nizam-ı Cedid</h4>
+              <ul class="study-list">
+                <li><strong>Nizam-ı Cedid ("Yeni Düzen" <span class="en-term">New Order</span>) Ne Demek?</strong>
+                  <ul>
+                    <li><strong>Dar anlamı <span class="en-term">narrow sense</span>:</strong> 1793'te kurulan Avrupa tarzı yeni askeri birlik.</li>
+                    <li><strong>Geniş anlamı <span class="en-term">broad sense</span>:</strong> III. Selim dönemindeki tüm yenilikler.</li>
+                  </ul>
+                </li>
+                <li><strong>En Önemli Özelliği:</strong> Osmanlı tarihinde <strong>bir plan ve programa göre yapılan İLK ıslahat hareketidir!</strong> <span class="en-term">first reform movement implemented according to a clear plan and program</span> (Fransa örnek alındı).</li>
+                <li><strong>Neler Kurdu? (4 Madde):</strong>
+                  <ol style="padding-left:1.2rem; margin-top:0.3rem;">
+                    <li><strong>Nizam-ı Cedid Ordusu (1793):</strong> Avrupalı subayların eğittiği modern ordu.</li>
+                    <li><strong>İrad-ı Cedid Hazinesi <span class="en-term">İrad-ı Cedit Treasury</span>:</strong> Bu yeni ordunun masrafları için kurulan özel bütçe/hazine.</li>
+                    <li><strong>Mühendishane-i Berri Hümayun:</strong> Kara ordusuna subay yetiştiren mühendislik okulu (ayrıca modern Tıp Okulu açıldı, baruthane ve tersane yenilendi).</li>
+                    <li><strong>İlk Daimi (Kalıcı) Elçilikler <span class="en-term">Permanent / Residence Embassies</span>:</strong> Avrupa siyasetini yakından izlemek için <strong>Paris, Londra, Viyana ve Berlin'de</strong> açıldı.</li>
+                  </ol>
+                </li>
+                <li><strong>Neden Yıkıldı? (1807 Kabakçı Mustafa İsyanı):</strong> Yeniçeri Ocağı kapatılmadan yanına yeni ordu kurulunca <strong>eski-yeni ikiliği</strong> <span class="en-term">duality between new and old</span> çıktı. Yeniçeriler, ulema ve ayanlar "din elden gidiyor" diyerek <strong>1807'de Kabakçı Mustafa İsyanı</strong> ile III. Selim'i tahttan indirdi.</li>
+              </ul>
+            </div>
+
+            <div class="sub-box">
+              <h4>🔥 II. Mahmud (1808–1839) — "Merkezi Otorite"</h4>
+              <ul class="study-list">
+                <li><strong>Ana Amacı:</strong> Devletin sarsılan <strong>merkezi otoritesini yeniden kurmak ve güçlendirmektir</strong> <span class="en-term">establish and strengthen central authority</span>.</li>
+                <li><strong>Alemdar Mustafa Paşa:</strong> Sadrazam Alemdar Mustafa Paşa, taşrada vergi ve asker vermeyen güçlü <strong>Ayanları (yerel eşrafı)</strong> <span class="en-term">local notables</span> kontrol altına aldı.</li>
+                <li><strong>1826 Yeniçeri Ocağı'nın Kaldırılması:</strong> II. Mahmud <strong>1826'da Yeniçeri Ocağı'nı kapattı</strong> ve yerine Avrupa usulü <strong>Asâkir-i Mansûre-i Muhammediye</strong> ordusunu kurdu!</li>
+                <li><strong>Eğitimde Yaptıkları:</strong>
+                  <ul>
+                    <li><strong>İlköğretimi zorunlu yaptı</strong> <span class="en-term">Primary education made compulsory</span>.</li>
+                    <li><strong>İlk kez Avrupa'ya öğrenci gönderdi</strong> <span class="en-term">students sent directly to Europe</span>.</li>
+                    <li>Orduya doktor yetiştirmek için yeni <strong>Tıp Okulu (Tıbbiye)</strong> ve memur okulları açtı.</li>
+                  </ul>
+                </li>
+                <li><strong>Sosyal Alanda "İlkler":</strong>
+                  <ul>
+                    <li><strong>Takvim-i Vekayi:</strong> İlk Türk <strong>resmi devlet gazetesi</strong> <span class="en-term">first official state newspaper</span>.</li>
+                    <li><strong>İlk modern nüfus sayımı</strong> <span class="en-term">first modern census</span>.</li>
+                    <li><strong>İlk karantina örgütü</strong> <span class="en-term">quarantine</span>, <strong>askeri itfaiye</strong> <span class="en-term">fire brigade</span> ve <strong>posta teşkilatı</strong> <span class="en-term">postal system</span>.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- BÖLÜM 3: TANZİMAT VE ISLAHAT -->
+        <article class="card">
+          <div class="card-header">
+            <h3>3. Tanzimat Dönemi (1839–1876): Tanzimat ve Islahat Fermanları</h3>
+            <span class="pill pill-blue">Karşılaştırma</span>
+          </div>
+
+          <div class="tldr-box">
+            <strong class="tldr-title">⚡ 10 Saniyede Anla</strong>
+            İkisi de Padişah <strong>Abdülmecid</strong> döneminde ilan edildi. Amaçları "azınlıklar isyan etmesin, devlet dağılmasın" demekti.<br>
+            • <strong>Tanzimat Fermanı (1839):</strong> Mustafa Reşid Paşa yazdı; padişah <u>kendi isteğiyle</u> kendi gücünü kanunla sınırladı.<br>
+            • <strong>Islahat Fermanı (1856):</strong> Kırım Savaşı sonrası <u>İngiltere ve Fransa baskısıyla</u> ilan edildi; gayrimüslimlere ekstra ayrıcalıklar verdi ama toplumu iyice kutuplaştırdı.
+          </div>
+
+          <div class="table-wrap" style="margin-bottom: 1.15rem;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Kriter</th>
+                  <th>📜 Tanzimat Fermanı (3 Kasım 1839) <span class="en-term">Tanzimat Edict</span></th>
+                  <th>📜 Islahat Fermanı (18 Şubat 1856) <span class="en-term">Reform Edict</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Padişah &amp; Hazırlayan</strong></td>
+                  <td>Padişah <strong>Abdülmecid</strong> döneminde, Londra Elçisi <strong>Mustafa Reşid Paşa</strong> tarafından yazılıp okundu.</td>
+                  <td>Padişah <strong>Abdülmecid</strong> döneminde, Kırım Savaşı sonrası <strong>İngiltere ve Fransa'nın baskısıyla</strong> ilan edildi.</td>
+                </tr>
+                <tr>
+                  <td><strong>Ne Getirdi? (Maddeleri)</strong></td>
+                  <td>
+                    • Müslüman ve gayrimüslim herkesin can, mal, namus güvenliği sağlandı.<br>
+                    • Vergiler herkesin <strong>gelirine göre</strong> alınacak dendi.<br>
+                    • Açık mahkemelerde <strong>kanun önünde eşitlik</strong> getirildi.<br>
+                    • <strong>Padişah kendi iradesiyle yetkilerini sınırlandırdı</strong> (Anayasaya/Meşrutiyete ilk adım!).
+                  </td>
+                  <td>
+                    <em>Sadece Gayrimüslimlere (Azınlıklara) yeni haklar verdi:</em><br>
+                    • Askerlik yükümlülüğü <strong>bedelli askerliğe (nakdi bedel)</strong> <span class="en-term">paid military service</span> çevrildi.<br>
+                    • Azınlıklara <strong>devlet memuru olma</strong> <span class="en-term">civil servants</span> hakkı verildi.<br>
+                    • Mahkemede Müslümanlarla <strong>eşit şahitlik</strong> hakkı verildi.<br>
+                    • <strong>Şirket kurma ve mülk edinme</strong> hakkı verildi.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Kim Neden Memnun Olmadı? (Sınav Sorusu!)</strong></td>
+                  <td>
+                    • <strong>Rumlar <span class="en-term">Greeks</span>:</strong> "Biz Hristiyanlar içinde en ayrıcalıklı gruptuk, şimdi diğerleriyle eşitlendik" diyerek kızdılar.<br>
+                    • <strong>Müslümanlar:</strong> Hristiyanlarla eşit olmaktan rahatsız oldular.<br>
+                    • <strong>Paşalar ve Valiler:</strong> Keyfi güçleri elden gittiği için kızdılar.<br>
+                    • <strong>Rusya ve Avusturya:</strong> "Bizim halkımız da böyle haklar ister" diye korktular.
+                  </td>
+                  <td>
+                    • Toplumu birleştirmek yerine <strong>ayrıştırdı ve kutuplaştırdı</strong> <span class="en-term">segregation and polarization</span>.<br>
+                    • Hristiyanların <strong>bağımsızlık isteğini</strong> güçlendirdi ve onları Avrupa devletlerinin korumasına itti.<br>
+                    • Müslüman halkı da küstürdü; Osmanlı'nın çöküşünü hızlandırdı.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="sub-box">
+            <h4>⭐ Tanzimat Döneminde Kurulan 7 Önemli "İlk" (Eşleştirme Sorusu Gelir!)</h4>
+            <div class="grid-2" style="margin-top:0.5rem;">
+              <ul class="study-list">
+                <li><strong>1. Mecelle:</strong> İlk Osmanlı Medeni Kanunu <span class="en-term">First civil law</span>.</li>
+                <li><strong>2. Şehremaneti:</strong> İstanbul'da kurulan ilk modern belediye <span class="en-term">First modern municipality</span>.</li>
+                <li><strong>3. İstanbul Darü'l-Fünûn (1854):</strong> İlk modern üniversite <span class="en-term">First modern university</span>.</li>
+                <li><strong>4. Tercüman-ı Ahvâl:</strong> Şinasi ve Agâh Efendi'nin çıkardığı <strong>ilk özel gazete</strong> <span class="en-term">First private newspaper</span>.</li>
+              </ul>
+              <ul class="study-list">
+                <li><strong>5. Bank-ı Dersaadet:</strong> İlk Osmanlı Bankası <span class="en-term">First Ottoman Bank</span>.</li>
+                <li><strong>6. Kız Okulları:</strong> Kız ilkokulları ve <strong>Kız Öğretmen Okulları</strong> <span class="en-term">Girl teacher schools</span> açıldı.</li>
+                <li><strong>7. Altyapı:</strong> İlk <strong>demiryolları ve telgraf hatları</strong> <span class="en-term">First railways and telegraph lines</span> kuruldu.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ==================== FLASHCARDS ==================== -->
+      <section class="content-panel" id="panel-flashcards" role="tabpanel">
+        <div class="hero-banner">
+          <span class="week-tag">Hızlı Ezber • 26 Kart</span>
+          <h2>Sınav Terimleri Kartları (Türkçe ⇄ İngilizce)</h2>
+          <p>Kartlara tıklayarak en kısa ve akılda kalıcı açıklamalarını açabilirsin.</p>
+          <div style="margin-top: 0.75rem;">
+            <button class="btn" id="flipAllBtn" type="button">🔄 Hepsini Aç / Kapat</button>
+          </div>
+        </div>
+
+        <div class="flashcard-grid" id="flashcardContainer"></div>
+      </section>
+
+      <!-- ==================== QUIZ ==================== -->
+      <section class="content-panel" id="panel-quiz" role="tabpanel">
+        <div class="hero-banner">
+          <span class="week-tag">Kendini Test Et • 15 Soru</span>
+          <h2>Vize Deneme Testi (1. ve 2. Hafta)</h2>
+          <p>Şıklara tıkladığında anında doğru cevabı ve kısa özetini gösterir.</p>
+          <div style="margin-top: 0.75rem; display: flex; align-items: center; gap: 1rem;">
+            <button class="btn" id="resetQuizBtn" type="button">🔄 Testi Sıfırla</button>
+            <strong id="quizScoreDisplay" style="color: var(--brand);">Skor: 0 / 15</strong>
+          </div>
+        </div>
+
+        <div id="quizContainer"></div>
+      </section>
+
+      <!-- ==================== SYLLABUS ==================== -->
+      <section class="content-panel" id="panel-syllabus" role="tabpanel">
+        <div class="hero-banner">
+          <span class="week-tag">13 Haftalık Plan</span>
+          <h2>Dersin Tüm Konuları (Müfredat Takibi)</h2>
+          <p>Yeni haftaların PDF'lerini attıkça aynı bu şekilde basit ve net özetlerini ekleyeceğim.</p>
+        </div>
+
+        <article class="card">
+          <div class="syllabus-list">
+            <div class="syllabus-row loaded">
+              <span><strong>1. Hafta:</strong> Dersin Amacı, Atatürk'ün Hayatı ve Osmanlı'nın Çöküş Nedenleri</span>
+              <span class="pill pill-green">✔ Hazır</span>
+            </div>
+            <div class="syllabus-row loaded">
+              <span><strong>2. Hafta:</strong> 18. ve 19. Yüzyıl Islahatları (Lale Devri, III. Selim, II. Mahmud, Tanzimat &amp; Islahat)</span>
+              <span class="pill pill-green">✔ Hazır</span>
+            </div>
+            <div class="syllabus-row pending">
+              <span><strong>3. Hafta:</strong> I. ve II. Meşrutiyet'in İlanı <span class="en-term">First and Second Constitutional Monarchy</span></span>
+              <span class="pill pill-gold">PDF Bekleniyor</span>
+            </div>
+            <div class="syllabus-row pending">
+              <span><strong>4. Hafta:</strong> Fikir Akımları ve İttihat ve Terakki <span class="en-term">Currents of Thoughts &amp; CUP</span></span>
+              <span class="pill pill-gold">PDF Bekleniyor</span>
+            </div>
+            <div class="syllabus-row pending">
+              <span><strong>5. Hafta:</strong> 1. Dünya Savaşı Öncesi Osmanlı ve Avrupa</span>
+              <span class="pill pill-gold">PDF Bekleniyor</span>
+            </div>
+            <div class="syllabus-row pending">
+              <span><strong>6. Hafta:</strong> 1. Dünya Savaşı ve Mondros Ateşkesi</span>
+              <span class="pill pill-gold">PDF Bekleniyor</span>
+            </div>
+            <div class="syllabus-row pending">
+              <span><strong>7. Hafta:</strong> İşgallerin Başlaması ve Milli Tepkiler</span>
+              <span class="pill pill-gold">PDF Bekleniyor</span>
+            </div>
+            <div class="syllabus-row pending">
+              <span><strong>8. Hafta:</strong> Kurtuluş Savaşı ve Kongreler (Örgütlenme)</span>
+              <span class="pill pill-gold">PDF Bekleniyor</span>
+            </div>
+            <div class="syllabus-row pending">
+              <span><strong>9. Hafta:</strong> TBMM'nin Açılışı ve Faaliyetleri</span>
+              <span class="pill pill-gold">PDF Bekleniyor</span>
+            </div>
+            <div class="syllabus-row pending">
+              <span><strong>10. Hafta:</strong> Doğu ve Güney Cepheleri</span>
+              <span class="pill pill-gold">PDF Bekleniyor</span>
+            </div>
+            <div class="syllabus-row pending">
+              <span><strong>11. Hafta:</strong> Batı Cephesi, San Remo ve Sevr Antlaşması</span>
+              <span class="pill pill-gold">PDF Bekleniyor</span>
+            </div>
+            <div class="syllabus-row pending">
+              <span><strong>12. Hafta:</strong> Sakarya Savaşı ve Büyük Taarruz</span>
+              <span class="pill pill-gold">PDF Bekleniyor</span>
+            </div>
+            <div class="syllabus-row pending">
+              <span><strong>13. Hafta:</strong> Mudanya Ateşkesi ve Lozan Barış Antlaşması</span>
+              <span class="pill pill-gold">PDF Bekleniyor</span>
+            </div>
+          </div>
+        </article>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    // 1. Sekme Geçişleri
+    const tabs = document.querySelectorAll('.nav-tab');
+    const panels = document.querySelectorAll('.content-panel');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        panels.forEach(p => p.classList.remove('active'));
+
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        const target = document.getElementById(tab.dataset.target);
+        if (target) target.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+
+    // 2. İngilizce Terimleri Aç/Kapat
+    const toggleEnBtn = document.getElementById('toggleEnBtn');
+    toggleEnBtn.addEventListener('click', () => {
+      const hidden = document.body.classList.toggle('hide-en');
+      toggleEnBtn.classList.toggle('active', !hidden);
+      toggleEnBtn.textContent = hidden ? '🇬🇧 İngilizce Terimler: Gizli' : '🇬🇧 İngilizce Terimler: Açık';
+    });
+
+    // 3. Tema Değiştirici
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const metaScheme = document.querySelector('meta[name="color-scheme"]');
+
+    themeToggleBtn.addEventListener('click', () => {
+      const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const currentPinned = localStorage.getItem('color-scheme');
+      let nextScheme;
+      if (!currentPinned) {
+        nextScheme = sysDark ? 'light' : 'dark';
+      } else {
+        nextScheme = currentPinned === 'dark' ? 'light' : 'dark';
+      }
+      localStorage.setItem('color-scheme', nextScheme);
+      metaScheme.content = nextScheme;
+      document.documentElement.dataset.theme = nextScheme;
+    });
+
+    // 4. Basitleştirilmiş Flashcard Verileri
+    const flashcardsData = [
+      { tr: "Türk Genel İnkılabı", en: "Turkish General Revolution", def: "Atatürk'ün inkılap için bizzat tercih ettiği isimdir. Çünkü halk için ve halka dayanarak yapılmıştır." },
+      { tr: "Nutuk (Söylev)", en: "Nutuk (The Speech)", def: "Atatürk'ün yazdığı ve bu dersin EN ÖNEMLİ tarihi kaynağı olan eser." },
+      { tr: "Vatan ve Hürriyet", en: "Homeland and Freedom", def: "Mustafa Kemal'in 1905'te Kurmay Yüzbaşı olarak gittiği Şam'da (Damascus) kurduğu gizli cemiyet." },
+      { tr: "Kardeş Katli & Ekber-Erşed", en: "Fratricide & Eldest Male Member", def: "Fatih taht kavgası çıkmasın diye kardeş katlini yasallaştırdı; I. Ahmed ise 'en yaşlı erkek üye tahta geçer' kuralını getirdi." },
+      { tr: "Şer'i ve Örfi Hukuk", en: "Sharia & Customary Law (Örfi)", def: "Osmanlı'da dini hukuk (Sharia) ile Türk geleneklerine dayalı padişah kanunlarının (Örfi) birlikte uygulanması." },
+      { tr: "Tımar Sistemi", en: "Timar (Land) System", def: "Devlet toprağını askere (Sipahiye) verir; Sipahi vergiyi toplar ve o parayla devlete bedava asker yetiştirir." },
+      { tr: "Beraya ve Reaya", en: "Beraya (Rulers) & Reaya (Ruled)", def: "Beraya: Vergi vermeyen yönetici/askeri sınıf. Reaya: Üretim yapan ve vergi ödeyen halk." },
+      { tr: "1683 Viyana & 1699 Karlofça", en: "Vienna Defeat (1683) & Karlowitz (1699)", def: "1683 Viyana ile geri çekilme başladı; 1699 Karlofça ile Osmanlı İLK KEZ Avrupa'nın üstünlüğünü kabul etti." },
+      { tr: "Kapitülasyonlar (1740)", en: "Commercial Capitulations (1740)", def: "Kanuni zamanında verilen, 1740 I. Mahmud döneminde kalıcı olan ticari ayrıcalıklar. Osmanlı esnafını batırdı." },
+      { tr: "Altın Orda'nın Yıkılışı (1502)", en: "Fall of the Golden Horde (1502)", def: "Kuzeydeki Türk devleti Altın Orda yıkılınca Rusya güçlendi ve sıcak denizlere (warm seas) inmek için Osmanlı'ya saldırdı." },
+      { tr: "Şark Meselesi", en: "The Eastern Question", def: "Avrupalı devletlerin Osmanlı'yı parçalama ve içindeki Hristiyan azınlıklara bağımsız devlet kurdurma planı." },
+      { tr: "İltizam Sistemi", en: "İltizam (Tax Farming)", def: "Devletin nakit para bulmak için toprak vergilerini özel kişilere (mültezimlere) peşin satması. Köylüyü ezdi." },
+      { tr: "İç Gümrük Engeli (1873)", en: "Internal Customs Barriers (1873)", def: "Osmanlı şehirleri arasında bile 1873'e kadar gümrük vergisi alınması. Büyük sanayi kurulmasını engelledi." },
+      { tr: "1854 Borç & 1881 Düyûn-ı Umûmiye", en: "Public Debt Administration (1881)", def: "1854'te ilk dış borç alındı. Ödenemeyince 1881'de Avrupa devletleri Düyûn-ı Umûmiye'yi kurup gelirlerimize el koydu." },
+      { tr: "Celali İsyanları", en: "Celali Uprisings", def: "17. yüzyılda Anadolu'da çıkan iç isyanlar. Güvenlik bozuldu, köylü tarımı bırakıp şehirlere göç etti." },
+      { tr: "Medrese ve Enderun", en: "Madrasahs & Enderun", def: "Medreselerden fen/matematik dersleri çıkarıldı, sadece din dersi kaldı. Saray okulu Enderun da önemini kaybetti." },
+      { tr: "Lale Devri (1718–1730)", en: "The Tulip Era", def: "Padişah III. Ahmed ve Damat İbrahim Paşa dönemi. Avrupa'ya ilk geçici elçiler gönderildi, ilk matbaa kuruldu." },
+      { tr: "Yirmisekiz Mehmed Çelebi", en: "Ambassador to France (Paris)", def: "Lale Devri'nde Fransa'ya gönderilen, oradaki okulları/fabrikaları/sarayları inceleyip rapor yazan en ünlü elçi." },
+      { tr: "İlk Türk Matbaası (1727)", en: "First Printing House (1727)", def: "Yirmisekiz Mehmed Çelebi'nin oğlu Mehmed Said Efendi'nin girişimiyle 1727'de kurulan ilk Türkçe matbaa." },
+      { tr: "Nizam-ı Cedid (1789–1807)", en: "New Order (Sultan Selim III)", def: "III. Selim'in başlattığı, Osmanlı tarihinde bir PLAN ve PROGRAMA dayalı İLK ıslahat hareketi (ve yeni ordu)." },
+      { tr: "İrad-ı Cedid & Mühendishane", en: "İrad-ı Cedid Treasury & Engineering School", def: "İrad-ı Cedid yeni ordunun masrafları için kurulan hazinedir; Mühendishane-i Berri Hümayun ise subay yetiştiren okuldur." },
+      { tr: "İlk Daimi Elçilikler", en: "Permanent (Residence) Embassies", def: "III. Selim döneminde Paris, Londra, Viyana ve Berlin'de açılan ilk kalıcı elçilikler." },
+      { tr: "Asâkir-i Mansûre-i Muhammediye", en: "Mahmud II's New Army (1826)", def: "II. Mahmud'un 1826'da Yeniçeri Ocağı'nı kapattıktan hemen sonra kurduğu modern ordu." },
+      { tr: "Takvim-i Vekayi vs. Tercüman-ı Ahvâl", en: "Official vs. Private Newspaper", def: "Takvim-i Vekayi (II. Mahmud) İLK RESMİ gazetedir; Tercüman-ı Ahvâl (Tanzimat, Şinasi/Agâh Efendi) İLK ÖZEL gazetedir." },
+      { tr: "Tanzimat Fermanı (1839)", en: "Tanzimat Edict (Mustafa Reşid Pasha)", def: "Abdülmecid döneminde Mustafa Reşid Paşa okudu. Padişah kendi isteğiyle yetkisini kanunla sınırladı, eşitlik getirdi." },
+      { tr: "Islahat Fermanı (1856) & Tanzimat İlkleri", en: "Reform Edict & Mecelle / Şehremaneti", def: "1856'da İngiltere/Fransa baskısıyla azınlıklara ayrıcalık verildi. İlkler: Mecelle (Medeni kanun), Şehremaneti (Belediye), Darü'l-Fünûn (Üniversite), Bank-ı Dersaadet (Banka)." }
+    ];
+
+    const flashcardContainer = document.getElementById('flashcardContainer');
+    flashcardsData.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'flashcard';
+      card.innerHTML = `
+        <div>
+          <div class="flashcard-term">${item.tr}</div>
+          <div class="flashcard-en">🇬🇧 ${item.en}</div>
+          <div class="flashcard-def">${item.def}</div>
+        </div>
+        <div class="flashcard-hint">Açıklama için tıkla</div>
+      `;
+      card.addEventListener('click', () => card.classList.toggle('flipped'));
+      flashcardContainer.appendChild(card);
+    });
+
+    document.getElementById('flipAllBtn').addEventListener('click', () => {
+      const allCards = flashcardContainer.querySelectorAll('.flashcard');
+      const anyUnflipped = Array.from(allCards).some(c => !c.classList.contains('flipped'));
+      allCards.forEach(c => c.classList.toggle('flipped', anyUnflipped));
+    });
+
+    // 5. Quiz Soruları
+    const quizData = [
+      {
+        q: "1. Atatürk, Türk İnkılabı için hangi ismi kullanmayı tercih etmiştir? (What did Atatürk prefer to call the revolution?)",
+        options: [
+          "Kemalist Revolution (Kemalist İnkılap)",
+          "Turkish General Revolution / Turkish Revolution (Türk Genel İnkılabı)",
+          "Young Turk Reformation",
+          "Ottoman Modernization"
+        ],
+        answer: 1,
+        explanation: "Atatürk, hareket halk için ve halka dayanarak yapıldığından 'Turkish General Revolution' (veya 'Turkish Revolution') adını tercih etmiştir."
+      },
+      {
+        q: "2. Mustafa Kemal 1905'te Kurmay Yüzbaşı (Staff Captain) olarak mezun olunca nereye atanmış ve hangi gizli cemiyeti kurmuştur?",
+        options: [
+          "Selanik — İttihat ve Terakki",
+          "Sofya — Balkan Cemiyeti",
+          "Şam — Vatan ve Hürriyet (Damascus — Homeland and Freedom)",
+          "Trablusgarp — Milli Direniş"
+        ],
+        answer: 2,
+        explanation: "1905'te ilk görev yeri olan Şam'da (Damascus) 'Vatan ve Hürriyet' (Homeland and Freedom) cemiyetini kurdu."
+      },
+      {
+        q: "3. Osmanlı'da Fatih'in yasallaştırdığı 'kardeş katli' (fratricide) uygulaması, I. Ahmed döneminde ne ile değiştirilmiştir?",
+        options: [
+          "Hanedanın en yaşlı erkek üyesinin tahta geçmesi (Eldest male member inherited the throne)",
+          "Padişahın seçimle belirlenmesi",
+          "Yeniçerilerin padişah seçmesi",
+          "Halifeliğin kaldırılması"
+        ],
+        answer: 0,
+        explanation: "I. Ahmed döneminde kardeş katli kaldırılarak hanedanın en yaşlı erkek üyesinin (Ekber ve Erşed) tahta geçmesi sistemine geçildi."
+      },
+      {
+        q: "4. Kanuni döneminde başlayan Kapitülasyonlar (Capitulations), 1740 yılında hangi padişah zamanında kalıcı/resmi hale gelmiştir?",
+        options: [
+          "III. Ahmed",
+          "I. Mahmud (Mahmud I)",
+          "III. Selim",
+          "II. Mahmud"
+        ],
+        answer: 1,
+        explanation: "Kapitülasyonlar 1740'ta I. Mahmud döneminde sürekli hale getirilmiştir."
+      },
+      {
+        q: "5. Osmanlı'da şehirler arasındaki ticareti zorlaştıran ve büyük sanayiyi engelleyen 'iç gümrük engelleri' (internal customs barriers) hangi yıla kadar sürmüştür?",
+        options: [
+          "1740",
+          "1826",
+          "1854",
+          "1873"
+        ],
+        answer: 3,
+        explanation: "İç gümrük vergileri 1873 yılına kadar devam etmiştir. (1854 ilk dış borç, 1881 Düyûn-ı Umûmiye'dir)."
+      },
+      {
+        q: "6. Osmanlı'nın 1699 Karlofça Antlaşması'nı (Treaty of Karlowitz) imzalayıp İLK KEZ Avrupa'nın üstünlüğünü kabul etmesine yol açan savaş hangisidir?",
+        options: [
+          "1502 Altın Orda'nın yıkılışı",
+          "1683 Viyana Bozgunu (Defeat at Vienna in 1683)",
+          "1853 Kırım Savaşı",
+          "1915 Çanakkale Savaşı"
+        ],
+        answer: 1,
+        explanation: "1683 Viyana Bozgunu ve sonrasındaki yenilgiler 1699 Karlofça Antlaşması'na yol açmış, Osmanlı ilk kez Batı'nın üstünlüğünü kabul etmiştir."
+      },
+      {
+        q: "7. 18. yüzyılda Lale Devri (Tulip Era) hariç yapılan tüm ıslahatlar hangi alanda yoğunlaşmıştır?",
+        options: [
+          "Sadece Askeri Alanda (In the military field)",
+          "Anayasa ve Meclis alanında",
+          "Kız çocuklarının eğitimi alanında",
+          "Bankacılık alanında"
+        ],
+        answer: 0,
+        explanation: "18. yüzyılda Lale Devri (kültür/mimari) hariç neredeyse tüm ıslahatlar savaş yenilgileri yüzünden askeri alanda (military field) yapılmıştır."
+      },
+      {
+        q: "8. Lale Devri'nde (1727) Paris Elçisi Yirmisekiz Mehmed Çelebi'nin oğlu Mehmed Said Efendi'nin girişimiyle ne kurulmuştur?",
+        options: [
+          "İlk daimi elçilik",
+          "İlk Türk Matbaası (First printing house for publishing works in Turkish)",
+          "İlk resmi gazete Takvim-i Vekayi",
+          "İlk modern üniversite Darü'l-Fünûn"
+        ],
+        answer: 1,
+        explanation: "1727'de Mehmed Said Efendi'nin girişimiyle Türkçe eserler basan ilk matbaa kurulmuştur."
+      },
+      {
+        q: "9. III. Selim'in 'Nizam-ı Cedid' (New Order) hareketini Osmanlı tarihinde bir ilk yapan özellik nedir?",
+        options: [
+          "Yeniçeri Ocağı'nı kaldırması",
+          "Bir plan ve programa göre uygulanan İLK ıslahat hareketi olması ve Avrupa'da ilk daimi elçilikleri açması",
+          "Cumhuriyeti ilan etmesi",
+          "Düyûn-ı Umûmiye'yi kurması"
+        ],
+        answer: 1,
+        explanation: "Nizam-ı Cedid, plan ve programa dayalı ilk ıslahattır (first reform movement implemented according to a clear plan and program) ve Paris, Londra, Viyana, Berlin'de ilk kalıcı elçilikler açılmıştır."
+      },
+      {
+        q: "10. II. Mahmud 1826'da Yeniçeri Ocağı'nı kaldırdıktan sonra yerine hangi modern orduyu kurmuştur?",
+        options: [
+          "Nizam-ı Cedid Ordusu",
+          "Tımarlı Sipahiler",
+          "Asâkir-i Mansûre-i Muhammediye",
+          "Kapıkulu Ocağı"
+        ],
+        answer: 2,
+        explanation: "II. Mahmud 1826'da Yeniçerileri kaldırıp 'Asâkir-i Mansûre-i Muhammediye' adlı modern orduyu kurdu."
+      },
+      {
+        q: "11. Aşağıdakilerden hangisi II. Mahmud döneminde (1808–1839) yapılan yeniliklerden biri DEĞİLDİR?",
+        options: [
+          "İlk resmi devlet gazetesi Takvim-i Vekayi'nin çıkarılması",
+          "İlköğretimin zorunlu olması ve Avrupa'ya ilk kez öğrenci gönderilmesi",
+          "İlk modern nüfus sayımı, karantina ve posta sisteminin kurulması",
+          "Şinasi ve Agâh Efendi tarafından ilk özel gazete Tercüman-ı Ahvâl'in çıkarılması"
+        ],
+        answer: 3,
+        explanation: "Tercüman-ı Ahvâl (ilk özel gazete) Tanzimat döneminde çıkarılmıştır. II. Mahmud döneminde çıkarılan gazete ilk resmi gazete olan Takvim-i Vekayi'dir."
+      },
+      {
+        q: "12. 3 Kasım 1839 Tanzimat Fermanı'nı bizzat yazan ve Sultan Abdülmecid'i ikna ederek ilan ettiren devlet adamı kimdir?",
+        options: [
+          "Alemdar Mustafa Paşa",
+          "Damat İbrahim Paşa",
+          "Londra Elçisi Mustafa Reşid Paşa (London Ambassador Mustafa Reşid Pasha)",
+          "Kabakçı Mustafa"
+        ],
+        answer: 2,
+        explanation: "Tanzimat Fermanı'nı Londra Elçisi Mustafa Reşid Paşa bizzat yazmış ve 3 Kasım 1839'da ilan ettirmiştir."
+      },
+      {
+        q: "13. Hristiyanlar arasındaki Rum azınlık (The Greeks) neden 1839 Tanzimat Fermanı'ndan rahatsız olmuştur?",
+        options: [
+          "Ticaret yapmaları yasaklandığı için",
+          "Hristiyanlar arasındaki en ayrıcalıklı grup olduklarından, eşitlik ilkesiyle ayrıcalıklarını kaybettikleri için",
+          "Askere gitmek istedikleri için",
+          "Vergileri iki katına çıktığı için"
+        ],
+        answer: 1,
+        explanation: "Rumlar (Greeks) Hristiyan tebaa içinde en ayrıcalıklı azınlık oldukları için eşitlik ilkesiyle ayrıcalıklarının bozulmasından memnun olmamıştır."
+      },
+      {
+        q: "14. 18 Şubat 1856 Islahat Fermanı (Reform Edict) ile ilgili aşağıdakilerden hangisi DOĞRUDUR?",
+        options: [
+          "Kırım Savaşı sonrası İngiltere ve Fransa'nın baskısıyla ilan edilmiş, gayrimüslimlere bedelli askerlik ve memur olma hakkı vermiş ama toplumu kutuplaştırmıştır",
+          "Padişahın hiçbir dış baskı olmadan kendi isteğiyle yazdığı fermandır",
+          "Gayrimüslimlerin şirket kurmasını yasaklamıştır",
+          "III. Selim tarafından ilan edilmiştir"
+        ],
+        answer: 0,
+        explanation: "Islahat Fermanı (1856), Kırım Savaşı sonrası İngiltere ve Fransa etkisiyle ilan edilmiş; azınlıklara bedelli askerlik (paid military service), memurluk, eşit şahitlik ve şirket/mülk hakkı vermiş fakat toplumu ayrıştırmıştır."
+      },
+      {
+        q: "15. Tanzimat Dönemi yeniliklerinden hangisi YANLIŞ eşleştirilmiştir?",
+        options: [
+          "Mecelle — İlk Medeni Kanun (First civil law)",
+          "Şehremaneti — İstanbul'da İlk Modern Belediye (First modern municipality)",
+          "Darü'l-Fünûn (1854) — İlk Modern Üniversite (First modern university)",
+          "Bank-ı Dersaadet — İlk Özel Gazete (First private newspaper)"
+        ],
+        answer: 3,
+        explanation: "Bank-ı Dersaadet ilk Osmanlı Bankasıdır. İlk özel gazete ise Tercüman-ı Ahvâl'dir."
+      }
+    ];
+
+    const quizContainer = document.getElementById('quizContainer');
+    const quizScoreDisplay = document.getElementById('quizScoreDisplay');
+    let score = 0;
+    let answeredCount = 0;
+
+    function renderQuiz() {
+      quizContainer.innerHTML = '';
+      score = 0;
+      answeredCount = 0;
+      quizScoreDisplay.textContent = `Skor: 0 / ${quizData.length}`;
+
+      quizData.forEach((item, idx) => {
+        const div = document.createElement('div');
+        div.className = 'quiz-item';
+        div.innerHTML = `
+          <div class="quiz-q">${item.q}</div>
+          <div class="quiz-options">
+            ${item.options.map((opt, oIdx) => `
+              <button type="button" class="quiz-opt" data-idx="${idx}" data-oidx="${oIdx}">${opt}</button>
+            `).join('')}
+          </div>
+          <div class="quiz-feedback" id="feedback-${idx}"></div>
+        `;
+        quizContainer.appendChild(div);
+      });
+
+      quizContainer.querySelectorAll('.quiz-opt').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const qIdx = parseInt(btn.dataset.idx, 10);
+          const oIdx = parseInt(btn.dataset.oidx, 10);
+          const parent = btn.closest('.quiz-item');
+          if (parent.dataset.answered) return;
+          parent.dataset.answered = 'true';
+          answeredCount++;
+
+          const correctIdx = quizData[qIdx].answer;
+          const allBtns = parent.querySelectorAll('.quiz-opt');
+          allBtns[correctIdx].classList.add('correct');
+
+          const feedback = document.getElementById(`feedback-${qIdx}`);
+          feedback.style.display = 'block';
+
+          if (oIdx === correctIdx) {
+            score++;
+            feedback.innerHTML = `<strong style="color:var(--green);">✔ Doğru!</strong> ${quizData[qIdx].explanation}`;
+          } else {
+            btn.classList.add('wrong');
+            feedback.innerHTML = `<strong style="color:var(--brand);">✘ Yanlış.</strong> ${quizData[qIdx].explanation}`;
+          }
+          quizScoreDisplay.textContent = `Skor: ${score} / ${quizData.length} (${answeredCount} soru yanıtlandı)`;
+        });
+      });
+    }
+
+    renderQuiz();
+    document.getElementById('resetQuizBtn').addEventListener('click', renderQuiz);
+
+    // 6. Canlı Arama
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.trim().toLowerCase();
+      const allCards = document.querySelectorAll('#panel-week1 .card, #panel-week2 .card, #panel-flashcards .flashcard');
+      allCards.forEach(card => {
+        if (!query) {
+          card.style.display = '';
+          return;
+        }
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(query) ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
